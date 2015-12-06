@@ -24,7 +24,7 @@ namespace Xam.Ref.BL
             try
             {
                 // Call the service
-                var serviceResult = await serviceProxy.AuthenticateUser(loggedInUser);
+                var serviceResult = await serviceProxy.AuthenticateUserAsync(loggedInUser);
 
                 if (serviceResult.IsSuccess)
                 {

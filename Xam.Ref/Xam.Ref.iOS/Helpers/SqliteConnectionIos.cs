@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Xam.Ref.Infra.Interfaces;
+using Xam.Ref.iOS.Helpers;
+using Xamarin.Forms;
 
+[assembly: Dependency(typeof(SqliteConnectionIos))]
 namespace Xam.Ref.iOS.Helpers
 {
     public class SqliteConnectionIos : IDataConnection

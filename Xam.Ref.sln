@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xam.Ref.Droid", "Xam.Ref\Xam.Ref.Droid\Xam.Ref.Droid.csproj", "{8F3DAE57-8877-4E3F-839F-F9736895D5C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xam.Ref.iOS", "Xam.Ref\Xam.Ref.iOS\Xam.Ref.iOS.csproj", "{27F901E5-7C8A-4474-BA4A-B5B187BFF7F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xam.Ref.View", "Xam.Ref\Xam.Ref\Xam.Ref.View.csproj", "{3D6CEFF2-EFB5-4C57-90F4-0374C5D41D77}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xam.Ref.UI", "Xam.Ref\Xam.Ref\Xam.Ref.UI.csproj", "{3D6CEFF2-EFB5-4C57-90F4-0374C5D41D77}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C7B0F78C-0775-4F9F-88BA-92D8F4901DB8}"
 	ProjectSection(SolutionItems) = preProject
@@ -25,6 +25,18 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xam.Ref.Models", "Xam.Ref.Models\Xam.Ref.Models.csproj", "{C13DFA78-B392-4044-AD42-D1EB8AD2B310}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xam.Ref.ViewModel", "Xam.Ref.ViewModel\Xam.Ref.ViewModel.csproj", "{DF7C07B3-E031-49AE-9CA8-D751ED94D5A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{A4C22342-EF5E-427E-B26A-0058E6907B39}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Android", "Android", "{9162A700-E2F3-4535-BE16-52F28EEFCEF9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "iOS", "iOS", "{1D965CE9-E644-40D5-9B47-BF56069B2F23}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows", "Windows", "{E8584CD2-8BBB-4CE5-AE2D-9CC4FF49C9C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{19784F96-F1C5-451E-AF44-EC88AF57D4BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xam.Ref.UnitTest", "Xam.Ref.UnitTest\Xam.Ref.UnitTest.csproj", "{067456C0-086C-46A8-B37F-1405717B7BFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -258,8 +270,51 @@ Global
 		{DF7C07B3-E031-49AE-9CA8-D751ED94D5A1}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{DF7C07B3-E031-49AE-9CA8-D751ED94D5A1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{DF7C07B3-E031-49AE-9CA8-D751ED94D5A1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Ad-Hoc|Any CPU.ActiveCfg = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Ad-Hoc|Any CPU.Build.0 = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Ad-Hoc|iPhoneSimulator.Build.0 = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Ad-Hoc|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Ad-Hoc|Mixed Platforms.Build.0 = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.AppStore|Any CPU.ActiveCfg = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.AppStore|Any CPU.Build.0 = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.AppStore|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.AppStore|iPhoneSimulator.Build.0 = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.AppStore|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.AppStore|Mixed Platforms.Build.0 = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Release|iPhone.Build.0 = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8F3DAE57-8877-4E3F-839F-F9736895D5C3} = {9162A700-E2F3-4535-BE16-52F28EEFCEF9}
+		{27F901E5-7C8A-4474-BA4A-B5B187BFF7F5} = {1D965CE9-E644-40D5-9B47-BF56069B2F23}
+		{3D6CEFF2-EFB5-4C57-90F4-0374C5D41D77} = {19784F96-F1C5-451E-AF44-EC88AF57D4BD}
+		{E49CE943-E646-40D4-A72C-3972095636A1} = {19784F96-F1C5-451E-AF44-EC88AF57D4BD}
+		{CF1BC927-2F25-4B5F-8CE8-4835ED172AA7} = {19784F96-F1C5-451E-AF44-EC88AF57D4BD}
+		{38E83A72-05A8-4E7F-ACD2-DC27D1C4BDBF} = {19784F96-F1C5-451E-AF44-EC88AF57D4BD}
+		{C13DFA78-B392-4044-AD42-D1EB8AD2B310} = {19784F96-F1C5-451E-AF44-EC88AF57D4BD}
+		{DF7C07B3-E031-49AE-9CA8-D751ED94D5A1} = {19784F96-F1C5-451E-AF44-EC88AF57D4BD}
+		{067456C0-086C-46A8-B37F-1405717B7BFC} = {A4C22342-EF5E-427E-B26A-0058E6907B39}
 	EndGlobalSection
 EndGlobal

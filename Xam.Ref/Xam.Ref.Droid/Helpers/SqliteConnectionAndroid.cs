@@ -11,10 +11,13 @@ using Android.Views;
 using Android.Widget;
 using Xam.Ref.Infra.Interfaces;
 using System.IO;
+using Xam.Ref.Droid.Helpers;
+using Xamarin.Forms;
 
+//[assembly: Dependency(typeof(SqliteConnectionAndroid))]
 namespace Xam.Ref.Droid.Helpers
 {
-    public class SqliteConnection : IDataConnection
+    public class SqliteConnectionAndroid : IDataConnection
     {
         public object GetConnection()
         {

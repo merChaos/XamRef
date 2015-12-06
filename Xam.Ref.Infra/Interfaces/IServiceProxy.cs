@@ -9,6 +9,6 @@ namespace Xam.Ref.Infra.Interfaces
 {
     public interface IServiceProxy : IDisposable
     {
-        Task<IServiceResult<User>> AuthenticateUser(LoginDetails loggedInUser);
+        Task<IServiceResult<User>> AuthenticateUserAsync(LoginDetails loggedInUser);
     }
 }

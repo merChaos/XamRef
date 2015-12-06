@@ -7,7 +7,7 @@ using Xam.Ref.Infra.Interfaces;
 
 namespace Xam.Ref.Infra.Util
 {
-    class Logging : ILogger
+    public class Logger : ILogger
     {
         public void LogException(Exception ex)
         {

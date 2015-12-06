@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using SQLite.Net;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +8,13 @@ using Xam.Ref.Helpers;
 using Xam.Ref.Infra.Interfaces;
 using Xam.Ref.Infra.Ioc;
 using Xamarin.Forms;
+using System.Reflection;
+using Xam.Ref.Dal.SqLite;
+using Xam.Ref.Models;
+using Xam.Ref.Infra.Helpers;
+using Xam.Ref.BL.Service;
+using Xam.Ref.ViewModel.ViewModel;
+using Xam.Ref.Infra.Util;
 
 namespace Xam.Ref
 {
@@ -35,39 +42,44 @@ namespace Xam.Ref
 
         public void SertupIoc()
         {
-            //IocContainer.Container = new ContainerBuilder()
-            //.RegisterPlatformDependency<IDataConnection>()
+            var builder = new ContainerBuilder();
 
-            //// Register all the platform dependencies here
-            //    .RegisterMvvmComponents(typeof(App).GetTypeInfo().Assembly) // will register the AutoFacPageLocator and all the View Models 
-            //    .RegisterPlatformDependency<INetworkService>() // will resolve the platform specific dependency of INetworkService
-            //    .RegisterPlatformDependency<IUserDialog>()
-            //    .RegisterPlatformDependency<IPhoneCallTask>()
-            //    .RegisterPlatformDependency<IGoogleAnalytics>()
-            //    .RegisterPlatformDependency<IDeviceSpecs>()
-            //    .RegisterPlatformDependency<IExternalBrowser>()
-            //    .RegisterPlatformDependency<ISocial>()
-            //    .RegisterPlatformDependency<ILocalNotification>()
-            //    .RegisterPlatformDependency<IDataSync>();
+            #region Register Views and ViewModels
 
+            builder.RegisterMvvmComponents(typeof(App).GetTypeInfo().Assembly, typeof(BaseViewModel).GetTypeInfo().Assembly);
 
+            #endregion
 
-            //// register all the other Dependencies here. 
-            //builder.RegisterType<ServiceProxy>().As<IServiceProxy>().SingleInstance();
-            //builder.RegisterType<UserDAL>().As<IUserDAL>().SingleInstance();
-            //builder.RegisterType<Repository<BenefitLocation>>().As<IRepository<BenefitLocation>>().SingleInstance();
-            //builder.RegisterType<Repository<BenefitDetails>>().As<IRepository<BenefitDetails>>().SingleInstance();
-            //builder.RegisterType<Repository<AppSettings>>().As<IRepository<AppSettings>>().SingleInstance();
-            //builder.RegisterType<Repository<BenefitSyncStatus>>().As<IRepository<BenefitSyncStatus>>().SingleInstance();
-            //builder.RegisterType<Repository<ProductDetails>>().As<IRepository<ProductDetails>>().SingleInstance();
-            //builder.RegisterType<Repository<ProductBenefitType>>().As<IRepository<ProductBenefitType>>().SingleInstance();
-            //builder.RegisterType<Repository<MembershipData>>().As<IRepository<MembershipData>>().SingleInstance();
-            //builder.RegisterType<Repository<UserProductBenefitType>>().As<IRepository<UserProductBenefitType>>().SingleInstance();
-            //builder.RegisterType<Repository<ContentMaster>>().As<IRepository<ContentMaster>>().SingleInstance();
-            //builder.RegisterType<Repository<GeoFenceLocations>>().As<IRepository<GeoFenceLocations>>().SingleInstance();
-            //Container = builder.Build();
+            #region Register Platform dependencies
 
+            builder.RegisterPlatformDependency<IDataConnection>()
+            .RegisterPlatformDependency<IUserDialog>();
+
+            #endregion
+
+            #region Register Repositories
+
+            builder.RegisterType<Repository<User>>().As<IRepository<User>>().SingleInstance();
+
+            #endregion
+
+            #region Register Service Results & Service Proxie
+
+            builder.RegisterType<ServiceResult<User>>().As<IServiceResult<User>>();
+            builder.RegisterType<ServiceProxy>().As<IServiceProxy>().SingleInstance();
+
+            #endregion
+
+            #region Register Other dependencies
+
+            builder.RegisterType<Navigator>().As<INavigator>().SingleInstance();
+            builder.RegisterType<Logger>().As<ILogger>().SingleInstance();
+
+            #endregion
+
+            IocContainer.Container = builder.Build();
 
         }
     }
 }
+

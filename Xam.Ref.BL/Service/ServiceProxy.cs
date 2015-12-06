@@ -15,12 +15,12 @@ namespace Xam.Ref.BL.Service
     {
         private const string HEADER_JSON = "application/json";
 
-        public async Task<IServiceResult<User>> AuthenticateUser(User loggedInUser)
+        public async Task<IServiceResult<User>> AuthenticateUserAsync(LoginDetails loggedInUser)
         {
             using (HttpClient client = new HttpClient())
             {
                 var requestJson = JsonConvert.SerializeObject(loggedInUser);
-                client.DefaultRequestHeaders.Add("id", loggedInUser.Name);
+                client.DefaultRequestHeaders.Add("id", loggedInUser.UserId);
                 var response = await client.PostAsync("", new StringContent(requestJson, Encoding.UTF8, HEADER_JSON));
                 var returnVal = IocContainer.Resolve<IServiceResult<User>>();
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)

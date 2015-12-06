@@ -29,6 +29,8 @@ namespace Xam.Ref.Helpers
 
         public static ContainerBuilder RegisterMvvmComponents(this ContainerBuilder builder, params Assembly[] assemblies)
         {
+            // Note: Can use AppDomain.CurrentDomain.GetAssemblies() instead of passing in the assemblies??
+
             if (builder == null)
             {
                 throw new ArgumentNullException("builder");
@@ -50,7 +52,7 @@ namespace Xam.Ref.Helpers
                     .RegisterViewModels(assemblies)
                     .RegisterViews(assemblies);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 // Log exception
                 throw;
