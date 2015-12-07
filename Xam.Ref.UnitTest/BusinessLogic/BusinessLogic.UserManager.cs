@@ -25,7 +25,7 @@ namespace Xam.Ref.UnitTest
         [TearDown]
         public void Cleanup()
         {
-
+            IocContainer.Container = null;
         }
 
         static LoginDetails d1 = new LoginDetails();

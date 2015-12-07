@@ -101,7 +101,7 @@ namespace Xam.Ref.ViewModel.ViewModel
         /// Executes the login.
         /// </summary>
         /// <returns>Task.</returns>
-        private async Task ExecuteLoginAsync()
+        public async Task ExecuteLoginAsync()
         {
             try
             {
