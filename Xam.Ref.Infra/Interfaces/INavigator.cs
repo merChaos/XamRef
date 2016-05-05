@@ -9,5 +9,6 @@ namespace Xam.Ref.Infra.Interfaces
     public interface INavigator
     {
         Task NavigateToAsync<T>(object args = null);
+        INavigator SetNavigator(object platformNavigator);
     }
 }
