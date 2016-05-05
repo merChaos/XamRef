@@ -18,11 +18,9 @@ namespace Xam.Ref.View
 
         public Page FirstView
         {
-            get
+           get
             {
-                NavigationPage _rootPage = null;
-                _rootPage = new NavigationPage(new SplashView());
-                return _rootPage ?? (_rootPage = _rootPage);
+                return _rootPage ?? (_rootPage = new NavigationPage(new SplashView())); 
             }
         }
     }
