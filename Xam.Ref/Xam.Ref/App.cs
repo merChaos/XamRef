@@ -22,7 +22,13 @@ namespace Xam.Ref
     {
         public App()
         {
-            // The root page of your application
+             var page = new RootView().FirstView;
+            this.MainPage = page;
+            SetupIoc();
+            var navigation = IocContainer.Resolve<INavigator>().SetNavigator(page.Navigation);
+
+            // once the setup is complete, navigate to firts page.
+            navigation.NavigateToAsync<LoginViewModel>();
         }
 
         protected override void OnStart()
